@@ -1,33 +1,42 @@
 <template>
   <div id="app">
+    <Header />
+    <AddTodo v-on:add-todo="addTodo" />
     <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
 </template>
 
 <script>
-import Todos from "./components/Todos";
-import Vue from "vue";
+import Todos from './components/Todos';
+import Header from './components/Header';
+import AddTodo from './components/AddTodo';
+import Vue from 'vue';
 Vue.config.devtools = true;
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    Todos
+    Todos,
+    Header,
+    AddTodo,
   },
   data() {
     return {
       todos: [
-        { id: "1", title: "Todo 1", completed: true },
-        { id: "2", title: "Todo 2", completed: false },
-        { id: "3", title: "Todo 3", completed: true }
-      ]
+        { id: '1', title: 'Todo 1', completed: true },
+        { id: '2', title: 'Todo 2', completed: false },
+        { id: '3', title: 'Todo 3', completed: true },
+      ],
     };
   },
   methods: {
     deleteTodo(id) {
-      this.todos = this.todos.filter(todo => todo.id !== id);
-    }
-  }
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+    },
+    addTodo(newTodo) {
+      this.todos = [...this.todos, newTodo];
+    },
+  },
 };
 </script>
 
