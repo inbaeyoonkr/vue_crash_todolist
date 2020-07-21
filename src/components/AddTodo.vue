@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import { v4 as uuidv4 } from 'uuid';
-
 export default {
   name: 'AddTodo',
   data() {
@@ -21,7 +19,6 @@ export default {
     addTodo(e) {
       e.preventDefault();
       const newTodo = {
-        id: uuidv4(),
         title: this.title,
         completed: false,
       };
@@ -32,7 +29,6 @@ export default {
   },
 };
 </script>
-<<<<<<< HEAD
 <style scoped>
 form {
   display: flex;
@@ -41,5 +37,3 @@ input[type='text'] {
   flex: 1;
 }
 </style>
-=======
->>>>>>> aa65952bc025144e38632145de91e1cba47b93fe
