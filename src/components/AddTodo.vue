@@ -32,6 +32,7 @@ export default {
   },
 };
 </script>
+<<<<<<< HEAD
 <style scoped>
 form {
   display: flex;
@@ -40,3 +41,5 @@ input[type='text'] {
   flex: 1;
 }
 </style>
+=======
+>>>>>>> aa65952bc025144e38632145de91e1cba47b93fe
